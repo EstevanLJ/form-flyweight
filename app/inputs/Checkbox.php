@@ -5,9 +5,9 @@ namespace App\Inputs;
 use App\State;
 use App\Application;
 
-class Textarea implements InputInterface {
+class Checkbox implements InputInterface {
 
-	public static function render(State $state) {
+    public static function render(State $state) {
         switch (Application::$APPLICATION_THEME) {
             case 'bulma':
                 self::bulma($state);
@@ -24,12 +24,13 @@ class Textarea implements InputInterface {
         echo('
             <div class="columns">
                 <div class="column is-' . $state->size . '">
-                    <div class="field">
-                        <label class="label">' . $state->displayName . '</label>
-                        <div class="control">
-                            <textarea class="textarea" name="' . $state->name . '" placeholder="' . $state->placeholder . '"></textarea>
+					<div class="field">
+						<div class="control">
+							<label class="checkbox">
+								<input type="checkbox" name="' . $state->name . '">
+								' . $state->displayName . '
+							</label>
                         </div>
-                        <p class="help">' . $state->tip . '</p>
                     </div>
                 </div>
             </div>
@@ -41,14 +42,18 @@ class Textarea implements InputInterface {
 			<div class="row">
 				<div class="col-xs-' . $state->size . '">
 					<div class="form-group">
-						<label class="control-label">' . $state->displayName . '</label>
-						<textarea rows="5" name="' . $state->name . '" class="form-control" placeholder="' . $state->placeholder . '"></textarea>
-						<span class="help-block">' . $state->tip . '</span>
+						<div class="checkbox">
+							<label>
+								<input type="checkbox" name="' . $state->name . '">
+								' . $state->displayName . '
+							</label>
+						</div>
 					</div>
 				</div>
             </div>
         ');
     }
 
-    
+
+
 }

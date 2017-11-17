@@ -5,6 +5,7 @@ namespace App;
 use App\Inputs\Text;
 use App\Inputs\Textarea;
 use App\Inputs\Select;
+use App\Inputs\Checkbox;
 
 class InputFactory {
 
@@ -17,11 +18,13 @@ class InputFactory {
             return self::$inputs[$name];
 
         } else {
+
             $newInput = self::createInput($name);   
 
             array_push(self::$inputs, $newInput);
 
-            return $newInput;
+			return $newInput;
+			
         }
 
     }
@@ -33,7 +36,9 @@ class InputFactory {
             case 'textarea':
                 return new Textarea();
             case 'select':
-                return new Select();
+				return new Select();
+			case 'checkbox':
+                return new Checkbox();
             default:
                 throw new \Exception('Input não existente!');
         }

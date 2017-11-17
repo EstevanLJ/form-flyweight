@@ -3,11 +3,12 @@
 namespace App\Inputs;
 
 use App\State;
+use App\Application;
 
 class Text implements InputInterface {
 
     public static function render(State $state) {
-        switch (APPLICATION_THEME) {
+        switch (Application::$APPLICATION_THEME) {
             case 'bulma':
                 self::bulma($state);
                 break;

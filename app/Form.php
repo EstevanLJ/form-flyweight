@@ -3,6 +3,7 @@
 namespace App;
 
 use App\InputFactory;
+use App\Application;
 
 class Form {
 
@@ -19,7 +20,7 @@ class Form {
     }
 
     public function render() {
-		switch (APPLICATION_THEME) {
+		switch (Application::$APPLICATION_THEME) {
             case 'bulma':
                 $this->renderBulma();
                 break;
@@ -44,6 +45,8 @@ class Form {
 			<body>
 			<section class="section">
 				<div class="container">
+				<h2 class="title is-2">' . $this->title . '</h2>
+				<hr>
         ');
 
         foreach($this->fields as $field) {
@@ -82,6 +85,8 @@ class Form {
 			</head>
 			<body>
 				<div class="container">
+					<h2>' . $this->title . '</h2>
+					<hr>
 		');
 
 		foreach($this->fields as $field) {
