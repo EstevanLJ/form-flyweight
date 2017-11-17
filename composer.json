@@ -1,0 +1,16 @@
+{
+    "name": "estevan/flyweight",
+    "authors": [
+        {
+            "name": "EstevanLJ",
+            "email": "estevanjunges@gmail.com"
+        }
+    ],
+    "require": {},
+
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    }
+}
