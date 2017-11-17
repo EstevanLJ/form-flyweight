@@ -22,6 +22,7 @@ class Application {
         $form->addField('text', 'last_name', 'Sobrenome', 'Seu segundo nome...', 6);
         $form->addField('text', 'email', 'E-mail', 'E-mail para contato', 6, [], 'Tenha certeza que você tem acesso a este e-mail!');;
         $form->addField('select', 'country', 'País de origem', '', 2, $paises, 'Selecione o país');
+        $form->addField('textarea', 'comment', 'Comentário', '', 12, [], 'Deixa aqui o seu comentário sobre o assunto');
 
         $form->render();
 
