@@ -8,25 +8,25 @@ use App\Inputs\Select;
 
 class InputFactory {
 
-    protected $inputs = [];
+    protected static $inputs = [];
 
-    public function build($name) {
+    public static function build($name) {
 
-        if(array_key_exists($name, $this->inputs)) {
+        if(array_key_exists($name, self::$inputs)) {
 
-            return $this->inputs[$name];
+            return self::$inputs[$name];
 
         } else {
-            $newInput = $this->createInput($name);   
+            $newInput = self::createInput($name);   
 
-            array_push($this->inputs, $newInput);
+            array_push(self::$inputs, $newInput);
 
             return $newInput;
         }
 
     }
 
-    private function createInput($name) {
+    private static function createInput($name) {
         switch ($name) {
             case 'text':
                 return new Text();

@@ -6,9 +6,6 @@ use App\State;
 
 class Text implements InputInterface {
 
-    protected $index;
-
-
     public static function render(State $state) {
         switch (APPLICATION_THEME) {
             case 'bulma':
@@ -27,9 +24,9 @@ class Text implements InputInterface {
             <div class="columns">
                 <div class="column is-' . $state->size . '">
                     <div class="field">
-                        <label class="label">' . $state->name . '</label>
+                        <label class="label">' . $state->displayName . '</label>
                         <div class="control">
-                            <input class="input" type="text" placeholder="' . $state->placeholder . '">
+                            <input class="input" type="text" name="' . $state->name . '" placeholder="' . $state->placeholder . '">
                         </div>
                         <p class="help">' . $state->tip . '</p>
                     </div>
@@ -39,13 +36,15 @@ class Text implements InputInterface {
     }
 
     public static function bootstrap(State $state) {
-        echo('
-            <div class="col-xs-' . $state->size . '">
-                <div class="form-group">
-                    <label class="control-label" for="inputSuccess1">' . $state->name . '</label>
-                    <input type="text" class="form-control" id="inputSuccess1" placeholder="' . $state->placeholder . '">
-                    <span id="helpBlock2" class="help-block">' . $state->tip . '</span>
-                </div>
+		echo('
+			<div class="row">
+				<div class="col-xs-' . $state->size . '">
+					<div class="form-group">
+						<label class="control-label">' . $state->displayName . '</label>
+						<input type="text" name="' . $state->name . '" class="form-control" placeholder="' . $state->placeholder . '">
+						<span class="help-block">' . $state->tip . '</span>
+					</div>
+				</div>
             </div>
         ');
     }

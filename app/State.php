@@ -5,7 +5,9 @@ namespace App;
 
 class State {
 
-    public $name;
+	public $name;
+	
+	public $displayName;
 
     public $size;
 
@@ -15,12 +17,20 @@ class State {
 
     public $tip;
 
-    public function __construct($name, $placeholder = '', $size = 12 , $options = [], $tip = '') {
-        $this->name = $name;
-        $this->size = $size;
-        $this->placeholder = $placeholder;
-        $this->options = $tip;
-    }
+    public function __construct($name, $displayName, $placeholder = '', $size = 12 , $options = [], $tip = '') {
+		
+		$this->name = $name;
 
+		$this->displayName = $displayName;
+		
+		$this->size = $size;
+		
+		$this->placeholder = $placeholder;
+		
+		$this->options = $options;
+
+		$this->tip = $tip;
+		
+    }
 
 }
