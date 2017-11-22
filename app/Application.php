@@ -18,14 +18,14 @@ class Application {
 			['key' => 2, 'value' => 'Argentina'],
 			['key' => 3, 'value' => 'Uruguai'],
 			['key' => 4, 'value' => 'Paraguai'],
-			['key' => 5, 'value' => 'Chile']
+			['key' => 5, 'value' => 'Chile'],
+			['key' => 6, 'value' => 'Outro']
 		];
 
 		$genders = [
-			['key' => 1, 'value' => 'Homem'],
-			['key' => 2, 'value' => 'Mulher'],
-			['key' => 3, 'value' => 'Transgenero'],
-			['key' => 4, 'value' => 'Indefinido']
+			['key' => 1, 'value' => 'Masculino'],
+			['key' => 2, 'value' => 'Feminino'],
+			['key' => 3, 'value' => 'Indefinido']
 		];
 
 		$form = new Form('Formulário Exemplo');

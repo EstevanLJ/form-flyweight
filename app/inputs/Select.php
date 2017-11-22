@@ -38,6 +38,7 @@ class Select implements InputInterface {
 		echo('						
 								</select>
 							</div>
+							<p class="help">' . $state->tip . '</p>
 						</div>
 					</div>
                 </div>
